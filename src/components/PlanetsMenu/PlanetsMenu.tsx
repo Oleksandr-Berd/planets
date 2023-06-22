@@ -33,7 +33,7 @@ const PlanetsMenu = (): JSX.Element => {
     return (
         <div>
         <Dropdown onToggle={toggleActive}>
-        <SC.StyledDropdownToggle variant="success" id="dropdown-basic">
+        <SC.StyledDropdownToggle id="dropdown-basic">
                     <BurgerSvg fill={isActive ? "#979797" : "#fff"} />
         </SC.StyledDropdownToggle>
 
