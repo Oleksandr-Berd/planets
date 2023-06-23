@@ -1,18 +1,41 @@
 
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
+import { useLocation } from "react-router-dom";
+
 import * as SC from "./TopicButtonsStyled"
 
-const TopicButtons = () => {
+import { colorsArray } from "utils/planetColors";
+
+const topics = [
+    { name: "overview" },
+    { name: "structure" },
+    { name: "surface" }
+]
+
+
+const TopicButtons = (): JSX.Element => {
+
+    const [isStressed, setIsStressed] = useState<string>("overview")
+
+    const location = useLocation()
+
+    const { pathname } = location;
+    const active = pathname.slice(1)
+
+    const properColor = colorsArray.find(el => el[0] === active)
 
     const topicHandler = (evt: ChangeEvent<HTMLInputElement>) => {
-        console.log(evt.target.name)
+        setIsStressed(evt.currentTarget.name)
     }
 
     return (
         <SC.StyledGroup >
-            <SC.StyledButton name="overview" onClick={topicHandler}>overview</SC.StyledButton>
-            <SC.StyledButton name="structure" onClick={topicHandler}>structure</SC.StyledButton>
-            <SC.StyledButton name="surface" onClick={topicHandler}>surface</SC.StyledButton>
+            {topics.map(({ name }) => (
+                <SC.StyledButton key={name} name={name} onClick={topicHandler} ><SC.Text stressed={isStressed === name ? "active" : null} color={properColor![1]}>{name}</SC.Text></SC.StyledButton>
+
+            ))}
+
+
         </SC.StyledGroup>
     );
 }

@@ -1,8 +1,10 @@
 import TopicButtons from "components/TopicButtons/TopicButtons";
 
+
+
 const PlanetPage = ():JSX.Element => {
     return (<div>
-        <TopicButtons/>
+        <TopicButtons  />
     </div> );
 }
  
