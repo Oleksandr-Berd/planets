@@ -69,7 +69,8 @@ const theme: object = {
   color: {
     background: "#070724",
     primary: "#fff",
-    border: "rgba(255, 255, 255, 0.2)",
+      border: "rgba(255, 255, 255, 0.2)",
+    notActive: "#979797"
   },
 
   radius: [

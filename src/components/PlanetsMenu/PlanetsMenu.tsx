@@ -8,20 +8,7 @@ import { ReactComponent as PathSvg } from "assets/svg/Path 3.svg"
 import planetsData from "dataBase/data.json"
 import { useState } from "react";
 
-const planetsColors:object = {
-    "Mercury":"#DEF4FC",
-    "Venus": "#F7CC7F",
-    "Earth": "#545BFE",
-    "Mars": "#FF6A45",
-    "Jupiter": "#ECAD7A",
-    "Saturn": "#FCCB6B",
-    "Uranus": "#65F0D5",
-    "Neptune": "#497EFA",
-}
-
-const colorsArray = Object.entries(planetsColors);
-
-
+import { colorsArray } from "utils/planetColors";
 
 const PlanetsMenu = (): JSX.Element => {
     const [isActive, setIsActive] = useState<boolean>(false)
@@ -42,7 +29,7 @@ const PlanetsMenu = (): JSX.Element => {
                     {
                         const color = colorsArray.filter(el => el[0] === name).map(el => el[1])
                         
-                        return <SC.Item href={name} key={name}>
+                        return <SC.Item href={name} key={name} planetColor={color[0]}>
                             <SC.PlanetContainer>
                                 <SC.PlanetColor color={color[0]}></SC.PlanetColor>
                                 <SC.PlanetName>{name}</SC.PlanetName>
