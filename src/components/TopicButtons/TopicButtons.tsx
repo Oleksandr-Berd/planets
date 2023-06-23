@@ -1,21 +1,18 @@
 
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 import { useLocation } from "react-router-dom";
 
 import * as SC from "./TopicButtonsStyled"
 
 import { colorsArray } from "utils/planetColors";
+import topics from "dataBase/topics.json"
 
-const topics = [
-    { name: "overview" },
-    { name: "structure" },
-    { name: "surface" }
-]
+interface iProps {
+    isStressed: string,
+    submitTopic: Function
+}
 
-
-const TopicButtons = (): JSX.Element => {
-
-    const [isStressed, setIsStressed] = useState<string>("overview")
+const TopicButtons = ({ isStressed, submitTopic }: iProps): JSX.Element => {
 
     const location = useLocation()
 
@@ -25,7 +22,7 @@ const TopicButtons = (): JSX.Element => {
     const properColor = colorsArray.find(el => el[0] === active)
 
     const topicHandler = (evt: ChangeEvent<HTMLInputElement>) => {
-        setIsStressed(evt.currentTarget.name)
+        submitTopic(evt.currentTarget.name)
     }
 
     return (
