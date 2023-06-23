@@ -1,18 +1,23 @@
+import { planetsSvg, planetsSvgMobile } from "utils/processedImages";
+
 
 interface IProps {
     topic: string,
-    content: { name: string; overview: { content: string; source: string; }; structure: { content: string; source: string; }; geology: { content: string; source: string; }; rotation: string; revolution: string; radius: string; temperature: string; images: { } } | undefined,
+    content: { [key: string]: any; } | undefined,
 }
 
 const PlanetContent = ({ topic, content }: IProps) => {
 
-    console.log(content);
+    
 
+    const ImageComponentMobile: any = planetsSvgMobile[content!.images.planet]
+    
+    
 
     return (<div>
         {topic === "overview" ?
-            <div style={{color: "red"}}>{topic}</div>    
-         : topic === "structure" ?
+            <ImageComponentMobile />
+: topic === "structure" ?
                 <div style={{ color: "red" }}>{topic}</div>
                 : 
                 <div style={{ color: "red" }}>{topic}</div>}
