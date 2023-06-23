@@ -29,7 +29,7 @@ const PlanetsMenu = (): JSX.Element => {
                     {
                         const color = colorsArray.filter(el => el[0] === name).map(el => el[1])
                         
-                        return <SC.Item href={name} key={name} planetColor={color[0]}>
+                        return <SC.Item href={name} key={name} >
                             <SC.PlanetContainer>
                                 <SC.PlanetColor color={color[0]}></SC.PlanetColor>
                                 <SC.PlanetName>{name}</SC.PlanetName>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 interface IProps {
   color: string;
+  stressed: "active" | null;
 }
 
 export const StyledGroup = styled(ButtonGroup)`
@@ -27,9 +28,14 @@ export const StyledButton = styled(Button)`
 
   border: none;
 
-  &:not(:last-child){
+  &:not(:last-child) {
     margin-right: ${(props) => props.theme.space[7]};
-}
+  }
+
+  &&&:hover,
+  &&&:focus, &&&:active {
+    background-color: transparent;
+  }
 `;
 
 export const Text = styled.span<IProps>`
@@ -37,5 +43,10 @@ export const Text = styled.span<IProps>`
   min-height: 100%;
   padding-bottom: 17px;
 
-  border-bottom: 4px solid ${(props) => props.color};
+  color:${(props) =>
+    props.stressed
+      ? `${props.theme.color.primary}`
+      : `${props.theme.color.notActive}`};
+  border-bottom: ${({ stressed, color }) =>
+    stressed ? `4px solid ${color}` : "none"};
 `;
