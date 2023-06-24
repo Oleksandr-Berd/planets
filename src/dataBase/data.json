@@ -20,7 +20,7 @@
     "images": {
       "planet": "mercuryPlanet",
       "internal": "mercuryInternal",
-      "geology": "./assets/geology-mercury.png"
+      "geology": "mercuryGeology"
     }
   },
   {
@@ -44,7 +44,7 @@
     "images": {
       "planet": "venusPlanet",
       "internal": "venusInternal",
-      "geology": "./assets/geology-venus.png"
+      "geology": "venusGeology"
     }
   },
   {
@@ -68,7 +68,7 @@
     "images": {
       "planet": "earthPlanet",
       "internal": "earthInternal",
-      "geology": "./assets/geology-earth.png"
+      "geology": "earthGeology"
     }
   },
   {
@@ -92,7 +92,7 @@
     "images": {
       "planet": "marsPlanet",
       "internal": "marsInternal",
-      "geology": "./assets/geology-mars.png"
+      "geology": "marsGeology"
     }
   },
   {
@@ -116,7 +116,7 @@
     "images": {
       "planet": "jupiterPlanet",
       "internal": "jupiterInternal",
-      "geology": "./assets/geology-jupiter.png"
+      "geology": "jupiterGeology"
     }
   },
   {
@@ -140,7 +140,7 @@
     "images": {
       "planet": "saturnPlanet",
       "internal": "saturnInternal",
-      "geology": "./assets/geology-saturn.png"
+      "geology": "saturnGeology"
     }
   },
   {
@@ -164,7 +164,7 @@
     "images": {
       "planet": "uranusPlanet",
       "internal": "uranusInternal",
-      "geology": "./assets/geology-uranus.png"
+      "geology": "uranusGeology"
     }
   },
   {
@@ -188,7 +188,7 @@
     "images": {
       "planet": "neptunePlanet",
       "internal": "neptuneInternal",
-      "geology": "./assets/geology-neptune.png"
+      "geology": "neptuneGeology"
     }
   }
 ]

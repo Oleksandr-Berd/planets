@@ -25,6 +25,17 @@ import { ReactComponent as SaturnInternalMobileSvg } from "assets/svg/mobile/int
 import { ReactComponent as UranusInternalMobileSvg } from "assets/svg/mobile/internal/planet-uranus-internal.svg";
 import { ReactComponent as NeptuneInternalMobileSvg } from "assets/svg/mobile/internal/planet-neptune-internal.svg";
 
+import geologyMercuryPng from "assets/images/geology-mercury.png"
+import geologyVenusPng from "assets/images/geology-venus.png";
+import geologyEarthPng from "assets/images/geology-earth.png";
+import geologyMarsPng from "assets/images/geology-mars.png";
+import geologyJupiterPng from "assets/images/geology-jupiter.png";
+import geologySaturnPng from "assets/images/geology-saturn.png";
+import geologyUranusPng from "assets/images/geology-uranus.png";
+import geologyNeptunePng from "assets/images/geology-neptune.png";
+
+
+
 
 export const planetsSvg: Record<string, React.FC> = {
   mercuryPlanet: MercuryPlanetSvg,
@@ -59,4 +70,16 @@ export const internalSvgMobile: Record<string, React.FC> = {
   uranusInternal: UranusInternalMobileSvg,
   neptuneInternal: NeptuneInternalMobileSvg,
 };
+
+export const geologyPng: Record<string, string> = {
+  mercuryGeology: geologyMercuryPng,
+  venusGeology: geologyVenusPng,
+  earthGeology: geologyEarthPng,
+  marsGeology: geologyMarsPng,
+  jupiterGeology: geologyJupiterPng,
+  saturnGeology: geologySaturnPng,
+  uranusGeology: geologyUranusPng,
+  neptuneGeology: geologyNeptunePng,
+};
+
 
