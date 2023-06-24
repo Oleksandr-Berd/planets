@@ -1,21 +1,21 @@
-import styled, { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
-
-// theme is now fully typed
-export const MyComponent = styled.div`
-  color: ${props => props.theme.colors.main};
-`;
-
-
-// theme is also fully typed
-export const MyGlobalStyle = createGlobalStyle`
-  body {
-    background-color: ${props => props.theme.colors.secondary};
+export const GlobalStyles: any = createGlobalStyle`
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
   }
-`;
 
+  span, p, a {
+    margin: 0;
+  }
 
-// and this theme is fully typed as well
-export const cssHelper = css`
-  border: 1px solid ${props => props.theme.borderRadius};
+  ul, nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  img {
+    display: block;
+  }
 `;

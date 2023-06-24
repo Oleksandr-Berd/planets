@@ -1,81 +1,80 @@
 import { NavLink } from "react-router-dom";
-import { geologyPng, internalSvgMobile, planetsSvg, planetsSvgMobile } from "utils/processedImages";
+import { geologyPng, internalSvgMobile, planetsSvgMobile } from "utils/processedImages";
 import externalPath from "assets/images/external-link-square-with-an-arrow-in-right-diagonal.png"
 
 import * as SC from "./PlanetContentStyled"
 interface IProps {
     topic: string,
-    content: { [key: string]:any } | undefined,
+    content: { [key: string]: any } | undefined,
 }
 
 const PlanetContent = ({ topic, content }: IProps) => {
 
-    
+
 
     const ImagePlanetMobile = planetsSvgMobile[content!.images.planet]
     const ImageInternalMobile = internalSvgMobile[content!.images.internal]
     const imageGeology = geologyPng[content!.images.geology]
 
-    const ImageComponentDesktop = planetsSvg[content!.images.planet]
+    // const ImageComponentDesktop = planetsSvg[content!.images.planet]
 
-    
 
-    return (<div>
-        {topic === "overview" ?<>
+
+    return (<SC.PageContainer>
+        {topic === "overview" ? <>
             <ImagePlanetMobile />
-            <h2>{content!.name}</h2>
-            <p>{content!.overview.content}</p>
-            <div>
-                <p>Source:</p>
-                <NavLink to={content!.overview.source}><span>Wikipedia</span><img src={externalPath} alt="externalPath" /></NavLink>
-                
-            </div>
-           
+            <SC.Name>{content!.name}</SC.Name>
+            <SC.Content>{content!.overview.content}</SC.Content>
+            <SC.SourceContainer>
+                <SC.SourceTitle>Source : </SC.SourceTitle>
+                <SC.SourceLink to={content!.overview.source}> Wikipedia<SC.SourceIcon src={externalPath} alt="externalPath" /></SC.SourceLink>
+            </SC.SourceContainer>
+
         </>
-: topic === "structure" ?
+            : topic === "structure" ?
                 <>
                     <ImageInternalMobile />
-                    <h2>{content!.name}</h2>
-                    <p>{content!.structure.content}</p>
-                    <div>
-                        <p>Source:</p>
-                        <NavLink to={content!.structure.source}><span>Wikipedia</span><img src={externalPath} alt="externalPath" /></NavLink>
-
-                    </div>
+                    <SC.Name>{content!.name}</SC.Name>
+                    <SC.Content>{content!.structure.content}</SC.Content>
+                    <SC.SourceContainer>
+                        <SC.SourceTitle>Source : </SC.SourceTitle>
+                        <SC.SourceLink to={content!.overview.source}> Wikipedia<SC.SourceIcon src={externalPath} alt="externalPath" /></SC.SourceLink>
+                    </SC.SourceContainer>
 
                 </>
-                : 
-                <>
-                    <SC.GeologyImageMobile src={imageGeology} alt="geology"/>
-                    <h2>{content!.name}</h2>
-                    <p>{content!.structure.content}</p>
-                    <div>
-                        <p>Source:</p>
-                        <NavLink to={content!.structure.source}><span>Wikipedia</span><img src={externalPath} alt="externalPath" /></NavLink>
-
-                    </div>
+                :
+                <><SC.GeologyImagesContainer>
+                    <ImagePlanetMobile />
+                    <SC.GeologyImageMobile src={imageGeology} alt="geology" />
+                </SC.GeologyImagesContainer>
+                    <SC.Name>{content!.name}</SC.Name>
+                    <SC.Content>{content!.structure.content}</SC.Content>
+                    <SC.SourceContainer>
+                        <SC.SourceTitle>Source : </SC.SourceTitle>
+                        <SC.SourceLink to={content!.structure.source}> Wikipedia<img src={externalPath} alt="externalPath" /></SC.SourceLink>
+                    </SC.SourceContainer>
 
                 </>
         }
-        <ul>
-            <li>
-                <h4>rotation time</h4>
-                <p>{content!.rotation}</p>
-            </li>
-            <li>
-                <h4>revolution time</h4>
-                <p>{content!.revolution}</p>
-            </li>
-            <li>
-                <h4>radius</h4>
-                <p>{content!.radius}</p>
-            </li>
-            <li>
-                <h4>average temp.</h4>
-                <p>{content!.temperature}</p>
-            </li>
-        </ul>
-    </div> );
+        <SC.InfoList>
+            <SC.InfoItem>
+                <SC.InfoTitle>rotation time</SC.InfoTitle>
+                <SC.InfoData>{content!.rotation}</SC.InfoData>
+            </SC.InfoItem>
+            <SC.InfoItem>
+                <SC.InfoTitle>revolution time</SC.InfoTitle>
+                <SC.InfoData>{content!.revolution}</SC.InfoData>
+            </SC.InfoItem>
+            <SC.InfoItem>
+                <SC.InfoTitle>radius</SC.InfoTitle>
+                <SC.InfoData>{content!.radius}</SC.InfoData>
+            </SC.InfoItem>
+            <SC.InfoItem>
+                <SC.InfoTitle>average temp.</SC.InfoTitle>
+                <SC.InfoData>{content!.temperature}</SC.InfoData>
+            </SC.InfoItem>
+        </SC.InfoList>
+    </SC.PageContainer>);
 }
- 
+
 export default PlanetContent;
