@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import { geologyPng, internalSvgMobile, planetsSvgMobile } from "utils/processedImages";
 import externalPath from "assets/images/external-link-square-with-an-arrow-in-right-diagonal.png"
 
@@ -9,8 +8,6 @@ interface IProps {
 }
 
 const PlanetContent = ({ topic, content }: IProps) => {
-
-
 
     const ImagePlanetMobile = planetsSvgMobile[content!.images.planet]
     const ImageInternalMobile = internalSvgMobile[content!.images.internal]

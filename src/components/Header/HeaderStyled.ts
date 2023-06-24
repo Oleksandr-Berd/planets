@@ -11,16 +11,27 @@ export const StyledHeader = styled.header`
   padding-top: ${(props) => props.theme.space[4]};
   padding-bottom: ${(props) => props.theme.space[4]};
 
-  border-bottom: 1px solid ${props => props.theme.color.border};
+  border-bottom: 1px solid ${(props) => props.theme.color.border};
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+
+    padding-top: ${props => props.theme.space[8]};
+    padding-bottom: 27px;
+  }
 `;
 
 export const Title = styled.h1`
-margin-bottom: 0;
+  margin-bottom: 0;
 
-text-transform: uppercase;
-color:${props => props.theme.color.primary};
-font-size: ${props => props.theme.size.SM};
-line-height: 1.29;
-font-family: ${props => props.theme.fontFamily.title};
-`
+  text-transform: uppercase;
+  color: ${(props) => props.theme.color.primary};
+  font-size: ${(props) => props.theme.size.SM};
+  line-height: 1.29;
+  font-family: ${(props) => props.theme.fontFamily.title};
+
+  @media (min-width: 768px) {
+    font-size: ${(props) => props.theme.size.M};
+  }
+`;
 
