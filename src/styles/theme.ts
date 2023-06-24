@@ -46,7 +46,8 @@ const theme: object = {
     XXL: "72px",
     XL: "64px",
     L: "56px",
-    XXM: "48px",
+    SL: "48px",
+    XXM: "40px",
     XM: "36px",
     M: "32px",
     SM: "28px",
@@ -69,8 +70,8 @@ const theme: object = {
   color: {
     background: "#070724",
     primary: "#fff",
-      border: "rgba(255, 255, 255, 0.2)",
-    notActive: "#979797"
+    border: "rgba(255, 255, 255, 0.2)",
+    notActive: "#979797",
   },
 
   radius: [
