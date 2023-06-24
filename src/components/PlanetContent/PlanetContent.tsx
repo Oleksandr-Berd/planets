@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { planetsSvg, planetsSvgMobile } from "utils/processedImages";
+import { internalSvgMobile, planetsSvg, planetsSvgMobile } from "utils/processedImages";
 import externalPath from "assets/images/external-link-square-with-an-arrow-in-right-diagonal.png"
 
 
@@ -12,7 +12,8 @@ const PlanetContent = ({ topic, content }: IProps) => {
 
     
 
-    const ImageComponentMobile = planetsSvgMobile[content!.images.planet]
+    const ImagePlanetMobile = planetsSvgMobile[content!.images.planet]
+    const ImageInternalMobile = internalSvgMobile[content!.images.internal]
     
     const ImageComponentDesktop = planetsSvg[content!.images.planet]
 
@@ -20,7 +21,7 @@ const PlanetContent = ({ topic, content }: IProps) => {
 
     return (<div>
         {topic === "overview" ?<>
-            <ImageComponentMobile />
+            <ImagePlanetMobile />
             <h2>{content!.name}</h2>
             <p>{content!.overview.content}</p>
             <div>
@@ -31,7 +32,17 @@ const PlanetContent = ({ topic, content }: IProps) => {
            
         </>
 : topic === "structure" ?
-                <div style={{ color: "red" }}>{topic}</div>
+                <>
+                    <ImageInternalMobile />
+                    <h2>{content!.name}</h2>
+                    <p>{content!.structure.content}</p>
+                    <div>
+                        <p>Source:</p>
+                        <NavLink to={content!.structure.source}><span>Wikipedia</span><img src={externalPath} alt="externalPath" /></NavLink>
+
+                    </div>
+
+                </>
                 : 
                 <div style={{ color: "red" }}>{topic}</div>}
         <ul>

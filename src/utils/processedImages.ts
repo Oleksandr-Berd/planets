@@ -16,6 +16,15 @@ import { ReactComponent as SaturnPlanetMobileSvg } from "assets/svg/mobile/plane
 import { ReactComponent as UranusPlanetMobileSvg } from "assets/svg/mobile/planets/uranus.svg";
 import { ReactComponent as NeptunePlanetMobileSvg } from "assets/svg/mobile/planets/neptune.svg";
 
+import { ReactComponent as MercuryInternalMobileSvg } from "assets/svg/mobile/internal/planet-mercury-internal.svg";
+import { ReactComponent as VenusInternalMobileSvg } from "assets/svg/mobile/internal/planet-venus-internal.svg";
+import { ReactComponent as EarthInternalMobileSvg } from "assets/svg/mobile/internal/planet-earth-internal.svg";
+import { ReactComponent as MarsInternalMobileSvg } from "assets/svg/mobile/internal/planet-mars-internal.svg"
+import { ReactComponent as JupiterInternalMobileSvg } from "assets/svg/mobile/internal/planet-jupiter-internal.svg";
+import { ReactComponent as SaturnInternalMobileSvg } from "assets/svg/mobile/internal/planet-saturn-internal.svg";
+import { ReactComponent as UranusInternalMobileSvg } from "assets/svg/mobile/internal/planet-uranus-internal.svg";
+import { ReactComponent as NeptuneInternalMobileSvg } from "assets/svg/mobile/internal/planet-neptune-internal.svg";
+
 
 export const planetsSvg: Record<string, React.FC> = {
   mercuryPlanet: MercuryPlanetSvg,
@@ -40,12 +49,14 @@ export const planetsSvgMobile: Record<string, React.FC> = {
   neptunePlanet: NeptunePlanetMobileSvg,
 };
 
-// <svg
-//   xmlns="http://www.w3.org/2000/svg"
-//   xmlns:xlink="http://www.w3.org/1999/xlink"
-//   width="200" // New width
-//   height="200" // New height
-//   viewBox="0 0 290 290" // Adjust viewBox to maintain aspect ratio
-// >
-//   {/* SVG content */}
-// </svg>;
+export const internalSvgMobile: Record<string, React.FC> = {
+  mercuryInternal: MercuryInternalMobileSvg,
+  venusInternal: VenusInternalMobileSvg,
+  earthInternal: EarthInternalMobileSvg,
+  marsInternal: MarsInternalMobileSvg,
+  jupiterInternal: JupiterInternalMobileSvg,
+  saturnInternal: SaturnInternalMobileSvg,
+  uranusInternal: UranusInternalMobileSvg,
+  neptuneInternal: NeptuneInternalMobileSvg,
+};
+
