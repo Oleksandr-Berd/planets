@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Dropdown } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 interface IProps {
   color?: string;
@@ -75,14 +76,16 @@ export const PlanetName = styled.p`
 //Tablet
 
 export const MenuList = styled.ul`
-display: flex;
-flex-direction: row;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-margin-top: 39px;
-`
+  margin-top: 39px;
+`;
 
-export const MenuItem = styled.li`
+export const MenuItem = styled(NavLink)`
+  text-decoration: none;
+
   color: ${(props) => props.theme.color.notActive};
   line-height: 2.23;
   font-size: ${(props) => props.theme.size.XN};

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledSharedLayout = styled.div`
+export const StyledSharedLayout = styled.main`
 
   min-width: ${(props) => props.theme.width.mobile};
 

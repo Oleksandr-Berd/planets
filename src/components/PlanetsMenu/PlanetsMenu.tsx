@@ -26,10 +26,12 @@ const PlanetsMenu = (): JSX.Element => {
     
     return (
         <div>
+
             {isTablet ? (<SC.MenuList>  
-                {planetsData.map(({ name }) => <SC.MenuItem>{name}</SC.MenuItem>)}
+                {planetsData.map(({ name }) => <SC.MenuItem to={name} key={name}>{name}</SC.MenuItem>)}
             </SC.MenuList>)
                 : null}
+            
             {isMobile ? <Dropdown onToggle={toggleActive}>
                 <SC.StyledDropdownToggle id="dropdown-basic">
                     <BurgerSvg fill={isActive ? "#979797" : "#fff"} />

@@ -9,6 +9,12 @@ interface IProps {
 export const StyledGroup = styled(ButtonGroup)`
   min-width: ${(props) => props.theme.percentage[10]};
   border-bottom: 1px solid ${(props) => props.theme.color.border};
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    min-width: 281px;
+  }
 `;
 
 export const StyledButton = styled(Button)`
@@ -30,11 +36,20 @@ export const StyledButton = styled(Button)`
 
   &:not(:last-child) {
     margin-right: ${(props) => props.theme.space[7]};
+    @media (min-width: 768px) {
+      margin-right: 0;
+    }
   }
 
   &&&:hover,
-  &&&:focus, &&&:active {
+  &&&:focus,
+  &&&:active {
     background-color: transparent;
+  }
+
+  @media (min-width: 768px){
+
+    border: 1px solid ${props => props.theme.color.border};
   }
 `;
 

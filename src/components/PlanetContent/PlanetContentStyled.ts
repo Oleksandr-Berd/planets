@@ -123,3 +123,11 @@ font-size: ${props => props.theme.size.XN};
 font-family: ${props => props.theme.fontFamily.title};
 line-height: 1.29;
 `
+
+//tablet
+
+export const ContentAndButtonsContainer = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+`
