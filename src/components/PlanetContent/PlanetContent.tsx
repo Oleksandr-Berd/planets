@@ -1,6 +1,6 @@
 import { useMediaQuery } from '@mui/material';
 
-import { geologyPng, internalSvgMobile, planetsSvgMobile } from "utils/processedImages";
+import { geologyPng, internalSvgMobile, internalSvgTablet, planetsSvgMobile, planetsSvgTablet } from "utils/processedImages";
 import externalPath from "assets/images/external-link-square-with-an-arrow-in-right-diagonal.png"
 
 import * as SC from "./PlanetContentStyled"
@@ -16,11 +16,14 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
 
     const isTablet = useMediaQuery('(min-width:768px)')
 
-    const ImagePlanetMobile = planetsSvgMobile[content!.images.planet]
-    const ImageInternalMobile = internalSvgMobile[content!.images.internal]
+    //Mobile
+    const ImagePlanetMobile = planetsSvgMobile[content!.images.planetMob]
+    const ImageInternalMobile = internalSvgMobile[content!.images.internalMob]
     const imageGeology = geologyPng[content!.images.geology]
 
-    // const ImageComponentDesktop = planetsSvg[content!.images.planet]
+//Tablet
+    const ImagePlanetTablet = planetsSvgTablet[content!.images.planetTablet]
+    const ImageInternalTablet = internalSvgTablet[content!.images.internalTablet]
 
 
 
@@ -29,7 +32,9 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
             isMobile ?
                 <SC.PageContainer >
                     {topic === "overview" ? <>
+                        <SC.ImageContainer>
                         <ImagePlanetMobile />
+                    </SC.ImageContainer>
                         <SC.Name>{content!.name}</SC.Name>
                         <SC.Content>{content!.overview.content}</SC.Content>
                         <SC.SourceContainer>
@@ -39,8 +44,10 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
 
                     </>
                         : topic === "structure" ?
-                            <>
-                                <ImageInternalMobile />
+                    <>
+                        <SC.ImageContainer>
+                            <ImageInternalMobile />
+                        </SC.ImageContainer>
                                 <SC.Name>{content!.name}</SC.Name>
                                 <SC.Content>{content!.structure.content}</SC.Content>
                                 <SC.SourceContainer>
@@ -50,10 +57,10 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
 
                             </>
                             :
-                            <><SC.GeologyImagesContainer>
+                            <><SC.ImageContainer>
                                 <ImagePlanetMobile />
-                                <SC.GeologyImageMobile src={imageGeology} alt="geology" />
-                            </SC.GeologyImagesContainer>
+                                <SC.GeologyImage src={imageGeology} alt="geology" />
+                            </SC.ImageContainer>
                                 <SC.Name>{content!.name}</SC.Name>
                                 <SC.Content>{content!.structure.content}</SC.Content>
                                 <SC.SourceContainer>
@@ -90,7 +97,9 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
                 <>
 
                     {topic === "overview" ? <>
-                        <ImagePlanetMobile />
+                         <SC.ImageContainer>
+                        <ImagePlanetTablet />
+                        </SC.ImageContainer>
                         <SC.ContentAndButtonsContainer>
                             <SC.ContentContainer>
                             <SC.Name>{content!.name}</SC.Name>
@@ -105,7 +114,9 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
                     </>
                         : topic === "structure" ?
                             <>
-                                <ImageInternalMobile />
+                                <SC.ImageContainer>
+                                    <ImageInternalTablet />
+                            </SC.ImageContainer>
                                 <SC.ContentAndButtonsContainer>
                                     <SC.ContentContainer>
                                         <SC.Name>{content!.name}</SC.Name>
@@ -119,10 +130,10 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
                                 </SC.ContentAndButtonsContainer>
                             </>
                             :
-                            <><SC.GeologyImagesContainer>
-                                <ImagePlanetMobile />
-                                <SC.GeologyImageMobile src={imageGeology} alt="geology" />
-                            </SC.GeologyImagesContainer>
+                            <><SC.ImageContainer>
+                                <ImagePlanetTablet />
+                                <SC.GeologyImage src={imageGeology} alt="geology" />
+                            </SC.ImageContainer>
                                 <SC.ContentAndButtonsContainer>
                                     <SC.ContentContainer>
                                         <SC.Name>{content!.name}</SC.Name>
