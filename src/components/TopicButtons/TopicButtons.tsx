@@ -39,6 +39,7 @@ const TopicButtons = ({ isStressed, submitTopic }: iProps): JSX.Element => {
     {isMobile ?
             <SC.StyledGroup >
                 {topics.map(({ name }) => (
+                    
                     <SC.StyledButton key={name} name={name} onClick={topicHandler} ><SC.Text stressed={isStressed === name ? "active" : null} color={properColor![1]}>{name}</SC.Text></SC.StyledButton>
 
                 ))}
@@ -50,7 +51,7 @@ const TopicButtons = ({ isStressed, submitTopic }: iProps): JSX.Element => {
         {isTablet ?
             <SC.StyledGroup >
                 {topics.map(({ name }, idx) => (
-                    <SC.StyledButton key={name} name={name} onClick={topicHandler} ><span>{setSequenceNumber(idx)}</span><SC.Text stressed={isStressed === name ? "active" : null} color={properColor![1]}>{name}</SC.Text></SC.StyledButton>
+                    <SC.StyledButton key={name} name={name} onClick={topicHandler} stressed={isStressed === name ? "active" : null} color={properColor![1]}><SC.SequenceNumber>{setSequenceNumber(idx)}</SC.SequenceNumber><SC.Text stressed={isStressed === name ? "active" : null} color={properColor![1]}>{name}</SC.Text></SC.StyledButton>
 
                 ))}
 

@@ -92,14 +92,14 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
                     {topic === "overview" ? <>
                         <ImagePlanetMobile />
                         <SC.ContentAndButtonsContainer>
-                            <div>
+                            <SC.ContentContainer>
                             <SC.Name>{content!.name}</SC.Name>
                             <SC.Content>{content!.overview.content}</SC.Content>
                             <SC.SourceContainer>
                                 <SC.SourceTitle>Source : </SC.SourceTitle>
                                 <SC.SourceLink to={content!.overview.source}> Wikipedia<SC.SourceIcon src={externalPath} alt="externalPath" /></SC.SourceLink>
                                 </SC.SourceContainer>
-                            </div>
+                            </SC.ContentContainer>
                             {TopicButtons}
                         </SC.ContentAndButtonsContainer>
                     </>
@@ -107,14 +107,14 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
                             <>
                                 <ImageInternalMobile />
                                 <SC.ContentAndButtonsContainer>
-                                    <div>
+                                    <SC.ContentContainer>
                                         <SC.Name>{content!.name}</SC.Name>
                                         <SC.Content>{content!.structure.content}</SC.Content>
                                         <SC.SourceContainer>
                                             <SC.SourceTitle>Source : </SC.SourceTitle>
                                             <SC.SourceLink to={content!.overview.source}> Wikipedia<SC.SourceIcon src={externalPath} alt="externalPath" /></SC.SourceLink>
                                         </SC.SourceContainer>
-                                    </div>
+                                    </SC.ContentContainer>
                                     {TopicButtons}
                                 </SC.ContentAndButtonsContainer>
                             </>
@@ -124,14 +124,14 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
                                 <SC.GeologyImageMobile src={imageGeology} alt="geology" />
                             </SC.GeologyImagesContainer>
                                 <SC.ContentAndButtonsContainer>
-                                    <div>
+                                    <SC.ContentContainer>
                                         <SC.Name>{content!.name}</SC.Name>
                                         <SC.Content>{content!.structure.content}</SC.Content>
                                         <SC.SourceContainer>
                                             <SC.SourceTitle>Source : </SC.SourceTitle>
                                             <SC.SourceLink to={content!.structure.source}> Wikipedia<img src={externalPath} alt="externalPath" /></SC.SourceLink>
                                         </SC.SourceContainer>
-                                    </div>
+                                    </SC.ContentContainer>
                                     {TopicButtons}
                                 </SC.ContentAndButtonsContainer>
 
