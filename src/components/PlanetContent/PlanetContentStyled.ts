@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const PageContainer = styled.div`
-  padding-top: 95px;
+  /* padding-top: 95px; */
   padding-bottom: 47px;
   padding-right: ${(props) => props.theme.space[6]};
   padding-left: ${(props) => props.theme.space[6]};
@@ -15,29 +15,46 @@ export const PageContainer = styled.div`
   }
 `;
 
-export const GeologyImagesContainer = styled.div`
+export const ImageContainer = styled.div`
   position: relative;
 
-  width: 327px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   margin-right: auto;
   margin-left: auto;
+
+  width: ${(props) => props.theme.width.mobile};
+  height: 304px;
+
+  @media (min-width: 768px) {
+    width: ${(props) => props.theme.width.tablet};
+
+    height: 460px;
+  }
 `;
 
-export const GeologyImageMobile = styled.img`
+export const GeologyImage = styled.img`
   position: absolute;
   bottom: 0;
   left: 0;
-  transform: translateY(70%) translateX(130%);
+  transform: translateY(0) translateX(155%);
 
   display: block;
   width: 90px;
 
   margin-left: auto;
   margin-right: auto;
+
+  @media (min-width: 768px) {
+    transform: translateY(0%) translateX(190%);
+
+    width: ${props => props.theme.space[16]};
+  }
 `;
 
 export const Name = styled.h2`
-  margin-top: 98px;
   margin-bottom: ${(props) => props.theme.space[4]};
 
   color: ${(props) => props.theme.color.primary};
@@ -182,3 +199,4 @@ export const ContentContainer = styled.div`
 
   text-align: left;
 `;
+
