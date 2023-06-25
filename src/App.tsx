@@ -4,6 +4,7 @@ import { lazy } from 'react';
 
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import { GlobalStyles } from 'styles/GlobalStyles';
+import NotFound from 'pages/NotFoundPage/NotFoundPage';
 
 const PlanetPage = lazy(() => import("pages/PlanetPage/PlanetPage"));
 

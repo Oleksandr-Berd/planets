@@ -69,6 +69,7 @@ const theme: object = {
   },
   color: {
     background: "#070724",
+    backgroundStressed: "#419EBB",
     primary: "#fff",
     border: "rgba(255, 255, 255, 0.2)",
     notActive: "#979797",

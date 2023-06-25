@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import { Dropdown } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 interface IProps {
   color?: string;
 }
+
+//Common and Mobile
 
 export const StyledDropdownToggle = styled(Dropdown.Toggle)`
   background-color: transparent;
@@ -68,4 +71,26 @@ export const PlanetName = styled.p`
 
   text-transform: uppercase;
   font-family: ${(props) => props.theme.fontFamily.text};
+`;
+
+//Tablet
+
+export const MenuList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-top: 39px;
+`;
+
+export const MenuItem = styled(NavLink)`
+  text-decoration: none;
+
+  color: ${(props) => props.theme.color.notActive};
+  line-height: 2.23;
+  font-size: ${(props) => props.theme.size.XN};
+
+  &:not(:last-child) {
+    margin-right: 33px;
+  }
 `;
