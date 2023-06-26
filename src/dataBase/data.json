@@ -22,6 +22,8 @@
       "internalMob": "mercuryInternal",
       "planetTablet": "mercuryPlanetTablet",
       "internalTablet": "mercuryInternalTablet",
+      "planetDesktop": "mercuryPlanetDesktop",
+      "internalDesktop": "mercuryInternalDesktop",
       "geology": "mercuryGeology"
     }
   },
@@ -48,6 +50,8 @@
       "internalMob": "venusInternal",
       "planetTablet": "venusPlanetTablet",
       "internalTablet": "venusInternalTablet",
+      "planetDesktop": "venusPlanetDesktop",
+      "internalDesktop": "venusInternalDesktop",
       "geology": "venusGeology"
     }
   },
@@ -74,6 +78,8 @@
       "internalMob": "earthInternal",
       "planetTablet": "earthPlanetTablet",
       "internalTablet": "earthInternalTablet",
+      "planetDesktop": "earthPlanetDesktop",
+      "internalDesktop": "earthInternalDesktop",
       "geology": "earthGeology"
     }
   },
@@ -100,6 +106,8 @@
       "internalMob": "marsInternal",
       "planetTablet": "marsPlanetTablet",
       "internalTablet": "marsInternalTablet",
+      "planetDesktop": "marsPlanetDesktop",
+      "internalDesktop": "marsInternalDesktop",
       "geology": "marsGeology"
     }
   },
@@ -126,6 +134,8 @@
       "internalMob": "jupiterInternal",
       "planetTablet": "jupiterPlanetTablet",
       "internalTablet": "jupiterInternalTablet",
+      "planetDesktop": "jupiterPlanetDesktop",
+      "internalDesktop": "jupiterInternalDesktop",
       "geology": "jupiterGeology"
     }
   },
@@ -152,6 +162,8 @@
       "internalMob": "saturnInternal",
       "planetTablet": "saturnPlanetTablet",
       "internalTablet": "saturnInternalTablet",
+      "planetDesktop": "saturnPlanetDesktop",
+      "internalDesktop": "saturnInternalDesktop",
       "geology": "saturnGeology"
     }
   },
@@ -178,6 +190,8 @@
       "internalMob": "uranusInternal",
       "planetTablet": "uranusPlanetTablet",
       "internalTablet": "uranusInternalTablet",
+      "planetDesktop": "uranusPlanetDesktop",
+      "internalDesktop": "uranusInternalDesktop",
       "geology": "uranusGeology"
     }
   },
@@ -204,6 +218,8 @@
       "internalMob": "neptuneInternal",
       "planetTablet": "neptunePlanetTablet",
       "internalTablet": "neptuneInternalTablet",
+      "planetDesktop": "neptunePlanetDesktop",
+      "internalDesktop": "neptuneInternalDesktop",
       "geology": "neptuneGeology"
     }
   }

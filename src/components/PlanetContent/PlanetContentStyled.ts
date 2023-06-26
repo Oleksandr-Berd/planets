@@ -33,6 +33,13 @@ export const ImageContainer = styled.div`
 
     height: 460px;
   }
+
+  @media (min-width: 1440px) {
+    padding-left: 335px;
+    margin-right: 300px;
+
+    height: 754px;
+  }
 `;
 
 export const GeologyImage = styled.img`
@@ -198,5 +205,15 @@ export const ContentContainer = styled.div`
   margin-right: 69px;
 
   text-align: left;
+
+  @media (min-width: 1440px){
+    padding-top: 126px;
+  }
 `;
 
+//desktop
+
+export const DesktopContainer = styled.div`
+display: flex;
+flex-direction: row;
+`
