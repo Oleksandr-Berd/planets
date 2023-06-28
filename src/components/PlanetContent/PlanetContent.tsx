@@ -1,6 +1,6 @@
 import { useMediaQuery } from '@mui/material';
 
-import { geologyPng, internalSvgMobile, internalSvgTablet, planetsSvgMobile, planetsSvgTablet } from "utils/processedImages";
+import { geologyPng, internalSvgDesktop, internalSvgMobile, internalSvgTablet, planetsSvgDesktop, planetsSvgMobile, planetsSvgTablet } from "utils/processedImages";
 import externalPath from "assets/images/external-link-square-with-an-arrow-in-right-diagonal.png"
 
 import * as SC from "./PlanetContentStyled"
@@ -14,16 +14,22 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
 
     const isMobile = useMediaQuery('(max-width:767px)')
 
-    const isTablet = useMediaQuery('(min-width:768px)')
+    const isTablet = useMediaQuery('(min-width:768px) and (max-width:1439px')
+
+    const isDesktop = useMediaQuery('(min-width:1440px)')
 
     //Mobile
     const ImagePlanetMobile = planetsSvgMobile[content!.images.planetMob]
     const ImageInternalMobile = internalSvgMobile[content!.images.internalMob]
     const imageGeology = geologyPng[content!.images.geology]
 
-//Tablet
+    //Tablet
     const ImagePlanetTablet = planetsSvgTablet[content!.images.planetTablet]
     const ImageInternalTablet = internalSvgTablet[content!.images.internalTablet]
+
+    //Desktop
+    const ImagePlanetDesktop = planetsSvgDesktop[content!.images.planetDesktop]
+    const ImageInternalDesktop = internalSvgDesktop[content!.images.internalDesktop]
 
 
 
@@ -33,8 +39,8 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
                 <SC.PageContainer >
                     {topic === "overview" ? <>
                         <SC.ImageContainer>
-                        <ImagePlanetMobile />
-                    </SC.ImageContainer>
+                            <ImagePlanetMobile />
+                        </SC.ImageContainer>
                         <SC.Name>{content!.name}</SC.Name>
                         <SC.Content>{content!.overview.content}</SC.Content>
                         <SC.SourceContainer>
@@ -44,10 +50,10 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
 
                     </>
                         : topic === "structure" ?
-                    <>
-                        <SC.ImageContainer>
-                            <ImageInternalMobile />
-                        </SC.ImageContainer>
+                            <>
+                                <SC.ImageContainer>
+                                    <ImageInternalMobile />
+                                </SC.ImageContainer>
                                 <SC.Name>{content!.name}</SC.Name>
                                 <SC.Content>{content!.structure.content}</SC.Content>
                                 <SC.SourceContainer>
@@ -97,16 +103,16 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
                 <>
 
                     {topic === "overview" ? <>
-                         <SC.ImageContainer>
-                        <ImagePlanetTablet />
+                        <SC.ImageContainer>
+                            <ImagePlanetTablet />
                         </SC.ImageContainer>
                         <SC.ContentAndButtonsContainer>
                             <SC.ContentContainer>
-                            <SC.Name>{content!.name}</SC.Name>
-                            <SC.Content>{content!.overview.content}</SC.Content>
-                            <SC.SourceContainer>
-                                <SC.SourceTitle>Source : </SC.SourceTitle>
-                                <SC.SourceLink to={content!.overview.source}> Wikipedia<SC.SourceIcon src={externalPath} alt="externalPath" /></SC.SourceLink>
+                                <SC.Name>{content!.name}</SC.Name>
+                                <SC.Content>{content!.overview.content}</SC.Content>
+                                <SC.SourceContainer>
+                                    <SC.SourceTitle>Source : </SC.SourceTitle>
+                                    <SC.SourceLink to={content!.overview.source}> Wikipedia<SC.SourceIcon src={externalPath} alt="externalPath" /></SC.SourceLink>
                                 </SC.SourceContainer>
                             </SC.ContentContainer>
                             {TopicButtons}
@@ -116,7 +122,7 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
                             <>
                                 <SC.ImageContainer>
                                     <ImageInternalTablet />
-                            </SC.ImageContainer>
+                                </SC.ImageContainer>
                                 <SC.ContentAndButtonsContainer>
                                     <SC.ContentContainer>
                                         <SC.Name>{content!.name}</SC.Name>
@@ -147,6 +153,88 @@ const PlanetContent = ({ topic, content, TopicButtons }: IProps) => {
                                 </SC.ContentAndButtonsContainer>
 
                             </>
+                    }
+                </>
+                <SC.InfoList>
+                    <SC.InfoItem>
+                        <SC.InfoTitle>rotation time</SC.InfoTitle>
+                        <SC.InfoData>{content!.rotation}</SC.InfoData>
+                    </SC.InfoItem>
+                    <SC.InfoItem>
+                        <SC.InfoTitle>revolution time</SC.InfoTitle>
+                        <SC.InfoData>{content!.revolution}</SC.InfoData>
+                    </SC.InfoItem>
+                    <SC.InfoItem>
+                        <SC.InfoTitle>radius</SC.InfoTitle>
+                        <SC.InfoData>{content!.radius}</SC.InfoData>
+                    </SC.InfoItem>
+                    <SC.InfoItem>
+                        <SC.InfoTitle>average temp.</SC.InfoTitle>
+                        <SC.InfoData>{content!.temperature}</SC.InfoData>
+                    </SC.InfoItem>
+                </SC.InfoList>
+            </SC.PageContainer >
+
+            : null}
+
+        {isDesktop ?
+            <SC.PageContainer >
+                <>
+                    {topic === "overview" ? <SC.DesktopContainer>
+                        <SC.ImageContainer>
+                            <ImagePlanetDesktop />
+                        </SC.ImageContainer>
+                        <SC.ContentAndButtonsContainer>
+                            <SC.ContentContainer>
+                                <SC.Name>{content!.name}</SC.Name>
+                                <SC.Content>{content!.overview.content}</SC.Content>
+                                <SC.SourceContainer>
+                                    <SC.SourceTitle>Source : </SC.SourceTitle>
+                                    <SC.SourceLink to={content!.overview.source}> Wikipedia<SC.SourceIcon src={externalPath} alt="externalPath" /></SC.SourceLink>
+                                </SC.SourceContainer>
+                                {TopicButtons}
+                            </SC.ContentContainer>
+
+                        </SC.ContentAndButtonsContainer>
+                    </SC.DesktopContainer>
+                        : topic === "structure" ?
+                            <SC.DesktopContainer>
+                                <SC.ImageContainer>
+                                    <ImageInternalDesktop />
+                                </SC.ImageContainer>
+                                <SC.ContentAndButtonsContainer>
+                                    <SC.ContentContainer>
+                                        <SC.Name>{content!.name}</SC.Name>
+                                        <SC.Content>{content!.structure.content}</SC.Content>
+                                        <SC.SourceContainer>
+                                            <SC.SourceTitle>Source : </SC.SourceTitle>
+                                            <SC.SourceLink to={content!.overview.source}> Wikipedia<SC.SourceIcon src={externalPath} alt="externalPath" /></SC.SourceLink>
+                                        </SC.SourceContainer>
+                                        {TopicButtons}
+                                    </SC.ContentContainer>
+                                   
+                                </SC.ContentAndButtonsContainer>
+                            </SC.DesktopContainer>
+                            :
+                            <SC.DesktopContainer>
+                                <SC.ImageContainer>
+                                <ImagePlanetDesktop />
+                                <SC.GeologyImage src={imageGeology} alt="geology" />
+                            </SC.ImageContainer>
+                                <SC.ContentAndButtonsContainer>
+                                    <SC.ContentContainer>
+                                        <SC.Name>{content!.name}</SC.Name>
+                                        <SC.Content>{content!.structure.content}</SC.Content>
+                                        <SC.SourceContainer>
+                                            <SC.SourceTitle>Source : </SC.SourceTitle>
+                                            <SC.SourceLink to={content!.structure.source}> Wikipedia<img src={externalPath} alt="externalPath" /></SC.SourceLink>
+                                        </SC.SourceContainer>
+                                        {TopicButtons}
+                                    </SC.ContentContainer>
+                                   
+                                </SC.ContentAndButtonsContainer>
+
+                            </SC.DesktopContainer>
                     }
 
 

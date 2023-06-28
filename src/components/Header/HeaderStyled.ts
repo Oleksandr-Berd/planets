@@ -19,6 +19,11 @@ export const StyledHeader = styled.header`
     padding-top: ${props => props.theme.space[8]};
     padding-bottom: 27px;
   }
+
+  @media (min-width: 1440px){
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h1`
@@ -32,6 +37,10 @@ export const Title = styled.h1`
 
   @media (min-width: 768px) {
     font-size: ${(props) => props.theme.size.M};
+  }
+
+  @media (min-width: 1440px){
+    font-size: ${props => props.theme.size.SM};
   }
 `;
 

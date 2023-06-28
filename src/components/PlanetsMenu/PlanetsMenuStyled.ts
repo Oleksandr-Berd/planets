@@ -31,6 +31,14 @@ export const StyledDropdownMenu = styled(Dropdown.Menu)`
   padding-bottom: 67px;
 
   background-color: ${(props) => props.theme.color.background};
+
+  @media (min-width: 1440px) {
+    padding-left: ${(props) => props.theme.space[8]};
+    padding-right: ${(props) => props.theme.space[10]};
+    padding-bottom: 27px;
+    padding-top: 33px;
+
+  }
 `;
 
 export const Item = styled(Dropdown.Item)`
@@ -81,16 +89,35 @@ export const MenuList = styled.ul`
   align-items: center;
 
   margin-top: 39px;
+
+  @media (min-width: 1440px){
+    margin-top: 0;;
+  }
 `;
 
 export const MenuItem = styled(NavLink)`
   text-decoration: none;
 
+  font-family: ${(props) => props.theme.fontFamily.text};
   color: ${(props) => props.theme.color.notActive};
   line-height: 2.23;
   font-size: ${(props) => props.theme.size.XN};
 
   &:not(:last-child) {
     margin-right: 33px;
+  }
+
+  @media (min-width: 1440px) {
+    text-transform: uppercase;
+    font-size: 11px;
+    line-height: 2.27;
+    transition: color 0.5s ease;
+  }
+
+  &:hover {
+    @media (min-width: 1440px) {
+      color: ${(props) => props.theme.color.primary};
+      transition: color 0.5s ease;
+    }
   }
 `;
