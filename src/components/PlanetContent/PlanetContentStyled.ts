@@ -13,6 +13,11 @@ export const PageContainer = styled.div`
     padding-left: ${(props) => props.theme.space[10]};
     padding-right: ${(props) => props.theme.space[10]};
   }
+
+  @media (min-width:1440px){
+    padding-left:189px;
+    padding-right: 165px;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -35,8 +40,8 @@ export const ImageContainer = styled.div`
   }
 
   @media (min-width: 1440px) {
-    padding-left: 335px;
-    margin-right: 300px;
+    /* padding-left: 335px; */
+    margin-right: 154px;
 
     height: 754px;
   }
@@ -57,7 +62,14 @@ export const GeologyImage = styled.img`
   @media (min-width: 768px) {
     transform: translateY(0%) translateX(190%);
 
-    width: ${props => props.theme.space[16]};
+    width: ${(props) => props.theme.space[16]};
+  }
+
+  @media (min-width: 1440px) {
+    transform: translateY(-50%) translateX(150%);
+
+    width: 163px;
+    height: 199px;
   }
 `;
 
@@ -84,6 +96,10 @@ export const Content = styled.p`
   font-size: ${(props) => props.theme.size.S};
   line-height: 2;
   font-weight: ${(props) => props.theme.weight.normal};
+
+  @media (min-width:1440px){
+    max-width: 350px;
+  }
 `;
 
 export const SourceContainer = styled.div`
@@ -166,6 +182,10 @@ export const InfoItem = styled.li`
 
     min-width: 164px;
   }
+
+  @media (min-width:1440px){
+    min-width: 255px;
+  }
 `;
 
 export const InfoTitle = styled.h4`
@@ -191,6 +211,10 @@ export const InfoData = styled.p`
   @media (min-width: 768px) {
     font-size: ${(props) => props.theme.size.XXN};
   }
+
+  @media (min-width: 1440px) {
+    font-size: ${(props) => props.theme.size.XXM};
+  }
 `;
 
 //tablet
@@ -208,6 +232,10 @@ export const ContentContainer = styled.div`
 
   @media (min-width: 1440px){
     padding-top: 126px;
+  }
+
+  @media (min-width: 1440px){
+    margin-right: 0;
   }
 `;
 
